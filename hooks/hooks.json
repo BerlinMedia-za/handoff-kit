@@ -1,0 +1,13 @@
+{
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/context-guard.sh", "timeout": 20 } ] }
+    ],
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/handoff-start.sh", "timeout": 10 } ] }
+    ],
+    "PreCompact": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/precompact-archive.sh", "timeout": 60 } ] }
+    ]
+  }
+}

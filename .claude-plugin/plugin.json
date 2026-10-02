@@ -1,0 +1,8 @@
+{
+  "name": "handoff-kit",
+  "version": "0.1.0",
+  "description": "Hands a Claude Code session off before its context fills up: a handoff note at a threshold, loaded into the next session automatically, plus a transcript backup before compaction.",
+  "author": { "name": "Berlin Media" },
+  "license": "MIT",
+  "hooks": "./hooks/hooks.json"
+}

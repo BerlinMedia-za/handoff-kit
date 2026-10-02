@@ -1,0 +1,14 @@
+{
+  "name": "handoff-kit",
+  "description": "Claude Code plugins from Berlin Media.",
+  "owner": {
+    "name": "Berlin Media"
+  },
+  "plugins": [
+    {
+      "name": "handoff-kit",
+      "source": "./",
+      "description": "Hands a Claude Code session off before its context fills up."
+    }
+  ]
+}
