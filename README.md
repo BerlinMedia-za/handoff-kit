@@ -48,6 +48,7 @@ Set these in the `env` block of `~/.claude/settings.json` (all projects) or `.cl
 | `HANDOFF_MAX_AGE_HOURS` | `72` | A new session only loads a note this recent. |
 | `HANDOFF_MAX_LINES` | `200` | How much of the note is loaded (longer notes say where the full file is). |
 | `HANDOFF_ARCHIVE` | `~/.local/state/handoff-kit/archive` | Where pre-compaction transcript copies go. |
+| `HANDOFF_EXTRA` | unset | Extra steps added to the handoff instruction, for example `Then message the reviewer that you handed off.` |
 | `HANDOFF_DEBUG` | unset | `1` logs every guard run to `~/.local/state/handoff-kit/debug.log`. |
 
 **Commit the notes or not?** Up to you. Add `.handoff/` to `.gitignore` to keep them local, or commit them so they travel with the repo. The guard tells Claude to commit only if committing notes is normal in that project.

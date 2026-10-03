@@ -33,6 +33,9 @@ check "silent below the threshold (18% of 1M)" '[ -z "$out4" ]'
 out5=$(stop s4 | HANDOFF_WINDOW=1000000 HANDOFF_THRESHOLD=15 "$root/scripts/context-guard.sh")
 check "threshold is configurable (fires at 15%)" '[ "$(jq -r .decision <<<"$out5")" = block ]'
 
+out6=$(stop s5 | HANDOFF_WINDOW=200000 HANDOFF_EXTRA="Also message Edith." "$root/scripts/context-guard.sh")
+check "HANDOFF_EXTRA is added to the instruction" 'grep -q "Also message Edith." <<<"$(jq -r .reason <<<"$out6")"'
+
 # Start hook: loads the newest note on startup and /clear, skips resume.
 mkdir -p "$tmp/project/.handoff"
 echo "old note" > "$tmp/project/.handoff/HANDOFF-2026-01-01-0900.md"; sleep 1
